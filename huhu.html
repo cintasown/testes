@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Future - Landing Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0d0d0d;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: cyan;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: cyan;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 10%;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            background: linear-gradient(45deg, cyan, purple);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        /* Bitcoin Image */
+        .bitcoin-container {
+            width: 250px;
+            margin: 20px auto;
+        }
+
+        .bitcoin {
+            width: 100%;
+        }
+
+        /* Floating Images */
+        .floating {
+            position: absolute;
+            width: 100px;
+            opacity: 0.7;
+        }
+
+        .bitcoin-float {
+            top: 100px;
+            left: 10%;
+        }
+
+        .ethereum {
+            bottom: 100px;
+            right: 10%;
+        }
+
+        /* Login Form */
+        .login-box {
+            display: none;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: 20px auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: cyan;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .login-box button:hover {
+            background: purple;
+        }
+
+        /* Welcome Text */
+        .welcome-text {
+            display: none;
+            font-size: 36px;
+            font-family: 'Orbitron', sans-serif;
+            color: cyan;
+            margin-top: 20px;
+        }
+
+        /* Responsive untuk HP */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                padding-top: 10px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero {
+                padding: 60px 5%;
+            }
+
+            .floating {
+                width: 60px;
+            }
+
+            .login-box {
+                width: 90%;
+            }
+
+            .welcome-text {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Crypto Future</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Revolusi Masa Depan Crypto</h1>
+        <p>Investasi digital yang aman, transparan, dan menguntungkan.</p>
+
+        <!-- Bitcoin -->
+        <div class="bitcoin-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" class="bitcoin" id="bitcoin">
+        </div>
+
+        <!-- Floating Images -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" class="floating bitcoin-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Ethereum-icon-purple.svg" class="floating ethereum">
+
+        <!-- Login Form -->
+        <div class="login-box" id="loginBox">
+            <h2>Login</h2>
+            <form id="loginForm" action="http://localhost/login" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Welcome Text -->
+        <div class="welcome-text" id="welcomeText">
+            🎉 Selamat Datang di Crypto Future Analis Muda! 🚀
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center;">
+        &copy; 2025 Crypto Future. By Muhammad Fadhil Ramadhan & Garda Yudha Wicaksana.
+    </footer>    
+
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- JavaScript for Animation -->
+    <script>
+        gsap.from(".hero h1", { y: -50, opacity: 0, duration: 1 });
+        gsap.from(".hero p", { y: 20, opacity: 0, duration: 1, delay: 0.5 });
+        gsap.from(".bitcoin-container", { scale: 0, opacity: 0, duration: 1, delay: 1 });
+
+        gsap.to(".bitcoin-float", { y: 15, repeat: -1, yoyo: true, duration: 2 });
+        gsap.to(".ethereum", { y: -15, repeat: -1, yoyo: true, duration: 2 });
+
+        setTimeout(() => {
+            gsap.to("#bitcoin", {
+                scale: 0,
+                opacity: 0,
+                duration: 1,
+                onComplete: function() {
+                    document.getElementById("bitcoin").style.display = "none";
+                    document.getElementById("loginBox").style.display = "block";
+                    gsap.from("#loginBox", { scale: 0.8, opacity: 0, duration: 1 });
+                }
+            });
+        }, 2000);
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("loginBox").style.display = "none";
+            document.getElementById("welcomeText").style.display = "block";
+            gsap.from("#welcomeText", { scale: 0.5, opacity: 0, duration: 1, ease: "elastic.out(1, 0.5)" });
+
+            this.submit();
+        });
+    </script>
+
+</body>
+</html>
